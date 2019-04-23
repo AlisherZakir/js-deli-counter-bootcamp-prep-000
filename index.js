@@ -11,12 +11,12 @@ function nowServing() {
     return "There is nobody waiting to be served!"
   } else {
   currentlyServing++;
-  return "Currently serving " + currentQue.shift() + ".";
+  return "Currently serving " + currentlyServing + ".";
   }
 }
 
-function currentLine(currentQue) {
-  if (currentQue.length === 0) {
+function currentLine() {
+  if (counter === currentlyServing) {
     return "The line is currently empty."
   } else {
   return currentQue.reduce((string, name, i) => {
