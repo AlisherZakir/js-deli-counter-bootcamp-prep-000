@@ -19,11 +19,11 @@ function currentLine() {
   if (counter === currentlyServing) {
     return "The line is currently empty."
   } else {
-  return currentQue.reduce((string, name, i) => {
-    if (i !== 0) {
-      string += ","
+    let string = `The line is currently: ${currentlyServing + 1}`
+    for (var i = currentlyServing + 2; i < counter + 1; i++) {
+      string += `, ${i}`;
     }
-    return string + ` ${i + 1}. ${name}`
-  }, "The line is currently:");
+    return string + ".";
+    
   }
 }
