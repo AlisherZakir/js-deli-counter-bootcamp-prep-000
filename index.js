@@ -16,12 +16,10 @@ function currentLine(currentQue) {
     return "The line is currently empty."
   } else {
   return currentQue.reduce((string, name, i) => {
-    let n = i + 1;
-    if (n === 1) {
-      return string + ` ${n}. ${name}`
-    } else {
-    return string + `, ${n}. ${name}`
+    if (i !== 0) {
+      string += ","
     }
+    return string + ` ${i + 1}. ${name}`
   }, "The line is currently:");
   }
 }
