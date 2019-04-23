@@ -1,12 +1,16 @@
-function takeANumber(currentQue, newPerson) {
-  currentQue.push(newPerson);
-  return `Welcome, ${newPerson}. You are number ${currentQue.length} in line.`;
+var counter = 0;
+var currentlyServing = 0;
+
+function takeANumber() {
+  counter++;
+  return `Welcome, person. You are number ${counter} in line.`;
 }
 
-function nowServing(currentQue) {
-  if (currentQue.length === 0) {
+function nowServing() {
+  if (counter === currentlyServing) {
     return "There is nobody waiting to be served!"
   } else {
+  currentlyServing++;
   return "Currently serving " + currentQue.shift() + ".";
   }
 }
